@@ -1,0 +1,32 @@
+// Declara una variable num1 y le damos el limite de hasta donde buscar los primos
+int num1 = 34;
+
+// Función para verificar si un número es primo
+bool EsPrimo(int num)
+{
+    // Importante pequeña verificacion para evitar errores al inicio
+    if (num <= 1) return false;
+    if (num == 2) return true;
+    if (num % 2 == 0) return false;
+
+
+    for (int i = 3; i * i <= num; i += 2)
+    {
+        if (num % i == 0) return false;
+    }
+
+    return true;
+}
+
+// Inicia un bucle for que se ejecuta desde i = 0 hasta i <= num1
+for (int i = 0; i <= num1; i++)
+{
+    // Si i es primo, imprime el valor de i en la consola
+    if (EsPrimo(i))
+    {
+        Console.WriteLine(i);
+    }
+}
+
+
+
